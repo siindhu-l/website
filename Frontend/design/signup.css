@@ -1,0 +1,48 @@
+/* Add this to your existing styles.css file */
+
+.signup {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.signup h2 {
+    margin-bottom: 20px;
+}
+
+.signup form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup input {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup button:hover {
+    background-color: #218838;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 50px;
+}
