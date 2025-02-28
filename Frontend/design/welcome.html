@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uber Clone</title>
+    <title>Uniride</title>
     <link rel="stylesheet" href="welcome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Add this CSS for animations */
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Image styles */
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 1.5rem; /* Space between text and image */
+            border-radius: 10px; /* Optional: rounded corners */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,23 +55,13 @@
         </nav>
     </header>
 
-    <section class="hero" id="home">
+    <section class="hero fade-in" id="home">
         <h1>Get a Ride in Minutes</h1>
         <p>Wherever you are, we’ll get you there.</p>
-        <button class="request-ride">Request a Ride</button>
+        <img src="Corpus_Christi_College_New_Court,_Cambridge,_UK_-_Diliff.jpg" alt="Ride Image"> <!-- Replace with your image path -->
     </section>
 
-    <section class="ride-request">
-        <h2>Request a Ride</h2>
-        <form>
-            <input type="text" placeholder="Pickup Location" required>
-            <input type="text" placeholder="Drop-off Location" required>
-            
-            <button type="submit">Request</button>
-        </form>
-    </section>
-
-    <section id="services" class="services">
+    <section id="services" class="services fade-in">
         <h2>Our Services</h2>
         <div class="service">
             <h3>Exclusively for Students</h3>
@@ -48,12 +69,8 @@
         </div>
         <div class="service">
             <h3>Affordable</h3>
-            <p>These rides are Affordable , made specially for Students.</p>
+            <p>These rides are Affordable, made specially for Students.</p>
         </div>
-        
     </section>
-
-    
-    
 </body>
 </html>
