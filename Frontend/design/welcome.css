@@ -58,7 +58,7 @@ nav {
     text-align: center;
     padding: 4rem 2rem;
     background: url('hero-bg.jpg') no-repeat center center/cover;
-    color:black;
+    color: black;
 }
 
 .hero h1 {
@@ -68,55 +68,6 @@ nav {
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
-}
-
-.request-ride {
-    background: #ffcc00;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-.request-ride:hover {
-    background: #ffdb4d;
-}
-
-/* Ride Request Section */
-.ride-request {
-    text-align: center;
-    padding: 2rem;
-    background: white;
-    margin: 2rem auto;
-    width: 80%;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.ride-request form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.ride-request input, .ride-request select, .ride-request button {
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.ride-request button {
-    background: #000;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.ride-request button:hover {
-    background: #333;
 }
 
 /* Services Section */
