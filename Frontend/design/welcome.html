@@ -3,14 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uber Clone</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Uniride</title>
+    <link rel="stylesheet" href="welcome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Add this CSS for animations */
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Image styles */
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 1.5rem; /* Space between text and image */
+            border-radius: 10px; /* Optional: rounded corners */
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Uber Clone</div>
+            <div class="logo">Uniride</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -24,65 +55,22 @@
         </nav>
     </header>
 
-    <section class="hero" id="home">
+    <section class="hero fade-in" id="home">
         <h1>Get a Ride in Minutes</h1>
         <p>Wherever you are, we’ll get you there.</p>
-        <button class="request-ride">Request a Ride</button>
+        <img src="C:\Users\rekha\OneDrive\Documents\GitHub\website\Frontend\assets\website_welcome_page_bg_image.jpg" alt="Ride Image"> <!-- Replace with your image path -->
     </section>
 
-    <section class="ride-request">
-        <h2>Request a Ride</h2>
-        <form>
-            <input type="text" placeholder="Pickup Location" required>
-            <input type="text" placeholder="Drop-off Location" required>
-            <select>
-                <option value="standard">Standard</option>
-                <option value="luxury">Luxury</option>
-                <option value="shared">Shared</option>
-            </select>
-            <button type="submit">Request</button>
-        </form>
-    </section>
-
-    <section id="services" class="services">
+    <section id="services" class="services fade-in">
         <h2>Our Services</h2>
         <div class="service">
-            <h3>Ride Sharing</h3>
-            <p>Share rides with others and save money.</p>
+            <h3>Exclusively for Students</h3>
+            <p>Reach there in time.</p>
         </div>
         <div class="service">
-            <h3>Delivery</h3>
-            <p>Get your packages delivered quickly.</p>
-        </div>
-        <div class="service">
-            <h3>Luxury Rides</h3>
-            <p>Travel in style with our premium options.</p>
+            <h3>Affordable</h3>
+            <p>These rides are Affordable, made specially for Students.</p>
         </div>
     </section>
-
-    <section class="testimonials">
-        <h2>What Our Users Say</h2>
-        <div class="testimonial">
-            <p>"Great service! I love how easy it is to get a ride."</p>
-            <span>- User 1</span>
-        </div>
-        <div class="testimonial">
-            <p>"The drivers are always friendly and on time."</p>
-            <span>- User 2</span>
-        </div>
-        <div class="testimonial">
-            <p>"I use Uber Clone for all my rides. Highly recommend!"</p>
-            <span>- User 3</span>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2023 Uber Clone. All rights reserved.</p>
-        <div class="social-media">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-    </footer>
 </body>
 </html>
