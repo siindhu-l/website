@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+
+    <div class="feedback-container">
+        <h2>Leave Your Feedback</h2>
+        
+        <div class="rating-section">
+            <h3>Rate Your Ride</h3>
+            <div class="stars">
+                <span class="star" onclick="rateRide(1)">★</span>
+                <span class="star" onclick="rateRide(2)">★</span>
+                <span class="star" onclick="rateRide(3)">★</span>
+                <span class="star" onclick="rateRide(4)">★</span>
+                <span class="star" onclick="rateRide(5)">★</span>
+            </div>
+            <p id="rating-feedback">Please rate your ride experience.</p>
+        </div>
+
+        <div class="comments-section">
+            <h3>Your Comments</h3>
+            <textarea id="comments" placeholder="Write your comments here..." rows="4"></textarea>
+        </div>
+
+        <div class="submit-section">
+            <button onclick="submitFeedback()">Submit Feedback</button>
+        </div>
+    </div>
+
+    <script>
+        function rateRide(rating) {
+            let feedback = "Thank you for your feedback!";
+            document.getElementById("rating-feedback").innerText = `You rated this ride: ${rating} stars. ${feedback}`;
+            const stars = document.querySelectorAll(".star");
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add("filled");
+                } else {
+                    star.classList.remove("filled");
+                }
+            });
+        }
+
+        function submitFeedback() {
+            const rating = document.querySelectorAll(".star.filled").length;
+            const comments = document.getElementById("comments").value;
+            
+            if (rating === 0 || comments.trim() === "") {
+                alert("Please provide both a rating and comments.");
+            } else {
+                alert("Thank you for your feedback!");
+                // Here, you could send the feedback data to the backend
+            }
+        }
+    </script>
+
+</body>
+</html>

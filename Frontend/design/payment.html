@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uber Payment</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Payment Details</h1>
+        <p>Complete your payment securely</p>
+
+        <form id="payment-form">
+            <!-- Cardholder Name -->
+            <div class="form-group">
+                <label for="card-name">Cardholder Name:</label>
+                <input type="text" id="card-name" name="card-name" placeholder="Enter cardholder name" required>
+            </div>
+
+            <!-- Card Number -->
+            <div class="form-group">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9101 1121" required maxlength="19">
+            </div>
+
+            <!-- Expiry and CVV -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="expiry">Expiry Date:</label>
+                    <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required maxlength="5">
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="password" id="cvv" name="cvv" placeholder="123" required maxlength="3">
+                </div>
+            </div>
+
+            <!-- Payment Method -->
+            <div class="form-group">
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" name="payment-method" onchange="updatePaymentButton()">
+                    <option value="credit">Credit Card</option>
+                    <option value="debit">Debit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="upi">UPI</option>
+                </select>
+            </div>
+
+            <!-- Payment Button -->
+            <button type="submit" id="pay-button">Pay Now</button>
+        </form>
+
+        <div id="payment-status"></div>
+    </div>
+
+    <script>
+        function updatePaymentButton() {
+            const paymentMethod = document.getElementById("payment-method").value;
+            const payButton = document.getElementById("pay-button");
+
+            if (paymentMethod === "credit") {
+                payButton.innerText = "Pay with Credit Card";
+                payButton.style.background = "linear-gradient(135deg, #000000, #434343)";
+            } else if (paymentMethod === "debit") {
+                payButton.innerText = "Pay with Debit Card";
+                payButton.style.background = "linear-gradient(135deg, #0057b8, #003d99)";
+            } else if (paymentMethod === "paypal") {
+                payButton.innerText = "Pay with PayPal";
+                payButton.style.background = "linear-gradient(135deg, #ffc439, #ffb500)";
+            } else if (paymentMethod === "upi") {
+                payButton.innerText = "Pay with UPI";
+                payButton.style.background = "linear-gradient(135deg, #0f9d58, #0a7b40)";
+            }
+        }
+    </script>
+
+</body>
+</html>

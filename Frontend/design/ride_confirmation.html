@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride Confirmation</title>
+    <link rel="stylesheet" href="ride_confirmation.css">
+</head>
+<body>
+
+    <div class="confirmation-container">
+        <h2>Confirm Your Ride</h2>
+        <div class="ride-details">
+            <p><strong>Pickup Location:</strong> 123 Main Street</p>
+            <p><strong>Destination:</strong> 456 Park Avenue</p>
+            <p><strong>Estimated Fare:</strong> $18.50</p>
+            <p><strong>Driver:</strong> John Doe (⭐ 4.9)</p>
+            <p><strong>Car:</strong> Toyota Prius - Black (ABC-1234)</p>
+        </div>
+
+        <div class="payment-section">
+            <label for="payment-method">Payment Method:</label>
+            <select id="payment-method" onchange="updatePaymentIcon()">
+                <option value="credit">Credit Card (**** 5678)</option>
+                <option value="debit">Debit Card (**** 4321)</option>
+                <option value="paypal">PayPal</option>
+                <option value="upi">UPI</option>
+            </select>
+            <span id="payment-icon">💳</span>
+        </div>
+
+        <button class="confirm-btn" onclick="confirmRide()">Confirm Ride</button>
+        <p class="confirmation-message" id="confirmationMessage"></p>
+    </div>
+
+    <script>
+        function updatePaymentIcon() {
+            const paymentMethod = document.getElementById("payment-method").value;
+            const paymentIcon = document.getElementById("payment-icon");
+
+            if (paymentMethod === "credit" || paymentMethod === "debit") {
+                paymentIcon.innerText = "💳";
+            } else if (paymentMethod === "paypal") {
+                paymentIcon.innerText = "🅿️";
+            } else if (paymentMethod === "upi") {
+                paymentIcon.innerText = "🏦";
+            }
+        }
+
+        function confirmRide() {
+            document.getElementById("confirmationMessage").innerText = "✅ Your ride has been confirmed!";
+        }
+    </script>
+
+</body>
+</html>

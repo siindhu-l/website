@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride Completed</title>
+    <link rel="stylesheet" href="ride_completion.css">
+</head>
+<body>
+
+    <div class="completion-container">
+        <h2>Ride Completed</h2>
+        
+        <div class="ride-summary">
+            <p><strong>Pickup:</strong> 123 Main Street</p>
+            <p><strong>Destination:</strong> 456 Park Avenue</p>
+            <p><strong>Distance:</strong> 15 miles</p>
+            <p><strong>Total Fare:</strong> $25.00</p>
+        </div>
+
+        <div class="rating-section">
+            <h3>Rate Your Ride</h3>
+            <div class="stars">
+                <span class="star" onclick="rateRide(1)">★</span>
+                <span class="star" onclick="rateRide(2)">★</span>
+                <span class="star" onclick="rateRide(3)">★</span>
+                <span class="star" onclick="rateRide(4)">★</span>
+                <span class="star" onclick="rateRide(5)">★</span>
+            </div>
+            <p id="rating-feedback">Please rate your driver.</p>
+        </div>
+
+        <div class="buttons">
+            <button onclick="leaveFeedback()">Leave Feedback</button>
+            <button onclick="endRide()">End Ride</button>
+        </div>
+    </div>
+
+    <script>
+        function rateRide(rating) {
+            let feedback = "Thank you for your feedback!";
+            document.getElementById("rating-feedback").innerText = `You rated this ride: ${rating} stars. ${feedback}`;
+            const stars = document.querySelectorAll(".star");
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add("filled");
+                } else {
+                    star.classList.remove("filled");
+                }
+            });
+        }
+
+        function leaveFeedback() {
+            alert("You can now leave your feedback.");
+        }
+
+        function endRide() {
+            alert("Your ride has ended.");
+        }
+    </script>
+
+</body>
+</html>
