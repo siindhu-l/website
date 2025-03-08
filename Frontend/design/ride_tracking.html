@@ -2,46 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="ride_tracking.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ride Tracking</title>
-    <link rel="stylesheet" href="ride_tracking.css">
 </head>
 <body>
 
-    <div class="tracking-container">
-        <h2>Track Your Ride</h2>
-        
-        <div class="ride-details">
-            <p><strong>Driver:</strong> John Doe (⭐ 4.9)</p>
-            <p><strong>Car:</strong> Toyota Prius - Black (ABC-1234)</p>
-            <p><strong>Estimated Time of Arrival (ETA):</strong> 10 minutes</p>
-        </div>
+    <h2>Track Your Ride</h2>
 
-        <div class="ride-map">
-            <div id="map"></div>
-            <div class="map-overlay">
-                <p>Driver is on the way!</p>
-            </div>
-        </div>
+    <div id="map">Map Loading...</div>
 
-        <div class="ride-status">
-            <p><strong>Current Status:</strong> On the way 🚗</p>
-            <button onclick="cancelRide()">Cancel Ride</button>
-        </div>
-    </div>
+    <p><strong>Current Status:</strong> On the way 🚗</p>
+    <button onclick="cancelRide()">Cancel Ride</button>
 
     <script>
-        // For the sake of this example, we're using a placeholder map. In a real scenario, you would integrate with a map service like Google Maps.
-        function initializeMap() {
-            const mapContainer = document.getElementById('map');
-            mapContainer.innerHTML = '<p>Map Loading...</p>';
-        }
-
         function cancelRide() {
             alert("Your ride has been canceled.");
         }
-
-        initializeMap();
     </script>
 
 </body>

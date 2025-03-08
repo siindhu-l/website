@@ -91,6 +91,54 @@ nav {
     transform: scale(1.05);
 }
 
+/* About Section */
+.about {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #eef2f3;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #d9e3f0;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 1rem;
+    line-height: 1.5;
+}
+
+.contact a {
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
 /* Testimonials Section */
 .testimonials {
     text-align: center;
