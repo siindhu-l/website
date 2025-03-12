@@ -74,7 +74,7 @@
 <body>
 
     <div class="container">
-        <h1>Fare Estimation</h1>
+        <h1>BOOKRIDE</h1>
         
         <form id="fare-form">
             <div class="form-group">
@@ -85,6 +85,11 @@
             <div class="form-group">
                 <label for="dropoff">Dropoff Location:</label>
                 <input type="text" id="dropoff" name="dropoff" placeholder="Enter dropoff location" required>
+            </div>
+
+            <div class="form-group">
+                <label for="time"><i class="fas fa-clock"></i> Time</label>
+                <input type="time" id="time" name="time" required>
             </div>
 
             <div class="form-group">
@@ -116,13 +121,19 @@
 
                 // Show the "Continue" button after fare calculation
                 document.getElementById('continue-btn').style.display = 'block';
+
+                
             } else {
                 alert('Please fill in all fields correctly.');
             }
+
+            
         });
 
+        
+
         function navigateToConfirmation() {
-            window.location.href = "ride_confirmation.html";
+            window.location.href = "payment.html";
         }
     </script>
 </body>

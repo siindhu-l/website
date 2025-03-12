@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             
             alert("Payment method saved successfully!");
-            window.location.href = "confirmation.html";
+            window.location.href = "ride_confirmation.html";
         });
     }
 });

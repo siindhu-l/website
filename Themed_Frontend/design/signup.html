@@ -6,6 +6,17 @@
     <title>Sign Up - UNIRIDE</title>
     <link rel="stylesheet" href="signup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script>
+        function handleSignup(event) {
+            event.preventDefault(); // Prevents default form submission
+
+            // Show pop-up alert
+            alert("Account created successfully!");
+
+            // Redirect to welcome page
+            window.location.href = "welcome.html";
+        }
+    </script>
 </head>
 <body>
 
@@ -43,8 +54,10 @@
                 // Store user data (for demo purposes only)
                 localStorage.setItem('user', JSON.stringify({ name, email }));
 
+            alert("account created successfully!")
+
                 // Redirect to 'book_a_ride.html'
-                window.location.href = 'bookride.html';
+                window.location.href = 'fare_estimation.html';
             } else {
                 alert('Please fill in all fields.');
             }

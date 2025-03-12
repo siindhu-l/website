@@ -97,15 +97,33 @@
     </div>
 
     <script>
-        function calculateEarnings() {
+        document.getElementById('earnings-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page refresh
+
             let trips = document.getElementById('trips').value;
             let earningsPerTrip = document.getElementById('earnings').value;
             let bonuses = document.getElementById('bonuses').value;
-            
+
             let total = (trips * earningsPerTrip) + (parseFloat(bonuses) || 0);
             document.getElementById('totalEarnings').innerText = `Total Earnings: $${total.toFixed(2)}`;
-        }
-    </script>
+
+            // Send data to PHP backend
+            fetch('drv_earning_calc.php', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: `trips=${trips}&earnings_per_trip=${earningsPerTrip}&bonuses=${bonuses}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    alert("Earnings saved successfully!");
+                } else {
+                    alert("Error saving earnings: " + data.message);
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        });
+    </script>S
     <script src="drv_earning_calc.js"></script>
 </body>
 </html>

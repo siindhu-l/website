@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uber Payment</title>
+    <title>Uniride Payment</title>
     <link rel="stylesheet" href="payment.css">
 </head>
 <body>
@@ -23,9 +23,33 @@
         
         <form id="paymentForm">
             <input type="text" id="paymentDetails" placeholder="Enter UPI ID" required>
-            <button type="submit">Save Payment Method</button>
+            <button type="submit"><a href="ride_confirmation.html">Save Payment Method</a></button>
         </form>
     </section>
+    <script>
+        document.getElementById("payment-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form from reloading page
+
+            let formData = new FormData(this);
+
+            fetch("payment_processing.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                let messageBox = document.getElementById("paymentMessage");
+                if (data.status === "success") {
+                    messageBox.style.color = "green";
+                    messageBox.innerText = data.message;
+                } else {
+                    messageBox.style.color = "red";
+                    messageBox.innerText = data.message;
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        });
+    </script>
     
     <script src="payment.js"></script>
 </body>

@@ -15,12 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('Please fill in all fields.');
                 return;
             }
+            
 
             // Simulate account creation (store data in localStorage for demo purposes)
             localStorage.setItem('user', JSON.stringify({ name, email }));
 
             // Redirect to 'bookride.html'
-            window.location.href = 'bookride.html';
+            window.location.href = 'fare_estimation.html';
         });
     } else {
         console.error('Signup form not found.');

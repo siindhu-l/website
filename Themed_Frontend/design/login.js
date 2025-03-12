@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('Login successful!');
                 
                 // Redirect to 'bookride.html'
-                window.location.href = 'bookride.html';
+                window.location.href = 'fare_estimation.html';
             } else {
                 alert('Invalid email or password. Please try again.');
             }
