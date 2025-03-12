@@ -79,3 +79,20 @@ body {
 .login-btn:hover {
     background: #0056b3;
 }
+
+/* Footer */
+footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+

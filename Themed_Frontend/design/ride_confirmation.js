@@ -1,31 +1,29 @@
-document.getElementById('fare-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+// ride_confirmation.js
 
-    const pickup = document.getElementById('pickup').value.trim();
-    const dropoff = document.getElementById('dropoff').value.trim();
-    const distance = parseFloat(document.getElementById('distance').value.trim());
+// Function to handle the confirmation of the ride
+function confirmRide() {
+    // Display a confirmation message when the button is clicked
+    document.getElementById("confirmationMessage").innerText = "✅ Your ride has been confirmed!";
 
-    if (!pickup || !dropoff || isNaN(distance) || distance <= 0) {
-        alert('Please fill in all fields correctly with a valid distance.');
-        return;
-    }
+    // Set a timeout to show a pop-up after 2 minutes (120 seconds)
+    setTimeout(function() {
+        alert("⏰ your ride is on the way.");
+    }, 6000);  // 120000 milliseconds = 2 minutes
 
-    const farePerKm = 13; // Updated fare rate
-    const estimatedFare = farePerKm * distance;
 
-    document.getElementById('fare-result').innerText = `Estimated Fare: ₹${estimatedFare}`;
-
-    // Save data in sessionStorage for easy retrieval
-    sessionStorage.setItem('estimatedFare', `₹${estimatedFare}`);
-
-    document.getElementById('continue-btn').style.display = 'block';
-});
-
-function navigateToConfirmation() {
-    const pickup = document.getElementById('pickup').value.trim();
-    const dropoff = document.getElementById('dropoff').value.trim();
-    const estimatedFare = document.getElementById('fare-result').innerText.split('₹')[1].trim();
-    sessionStorage.setItem('estimatedFare', `₹${estimatedFare}`);
-
-    window.location.href = 'ride_confirmation.html';
+    setTimeout(function() {
+    window.location.href = 'completion.html';
+    }, 20000);  // 120000 milliseconds = 2 minutes
 }
+
+
+// This will load the estimated fare when the page is loaded
+window.onload = function() {
+    const params = new URLSearchParams(window.location.search);
+    const estimatedFare = params.get('fare') || "N/A";
+
+    // Display the estimated fare in the ride details section
+    document.querySelector('.ride-details').innerHTML = `
+        <p><strong>Estimated Fare:</strong> ₹${estimatedFare}</p>
+    `;
+};

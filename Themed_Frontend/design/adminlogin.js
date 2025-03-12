@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
             if (data.success) {
                 alert("Login successful! Redirecting...");
-                window.location.href = "admin-dashboard.html"; // Redirect to admin dashboard
+                window.location.href = "admin_dashboard.html"; // Redirect to admin dashboard
             } else {
                 alert("Login failed: " + data.message);
             }
