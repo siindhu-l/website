@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-        <link rel="stylesheet" href="ride_req.css">
-    
-    
+    <link rel="stylesheet" href="ride_req.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incoming Ride Request</title>
-    
 </head>
 <body>
 
-    <script src="ride_req.js"></script>
     <div class="ride-request-container">
         <h2>Incoming Ride Request</h2>
         <div class="request-details">
-            <p><strong>Pickup:</strong> </p>
-            <p><strong>Destination:</strong> </p>
-            <p><strong>Estimated Fare:</strong> </p>
+            <p><strong>Pickup:</strong> <span id="pickup">123 Main Street</span></p>
+            <p><strong>Destination:</strong> <span id="dropoff">456 Park Avenue</span></p>
+            <p><strong>Estimated Fare:</strong> $<span id="estimatedFare">18.50</span></p>
         </div>
         <div class="buttons">
-            <button class="accept-btn" onclick="handleRequest('accepted')">Accept</button>
-            <button class="decline-btn" onclick="handleRequest('declined')">Decline</button>
+            <button class="accept-btn" onclick="handleRequest('accept')">Accept</button>
+            <button class="decline-btn" onclick="handleRequest('decline')">Decline</button>
         </div>
         <div class="message" id="responseMessage"></div>
     </div>
 
     <script>
         function handleRequest(action) {
-            let message = action === 'accepted' ? 'Ride Accepted! 🚗' : 'Ride Declined! ❌';
-            document.getElementById('responseMessage').innerText = message;
+            fetch("ride_request.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams({ action: action }).toString()
+            })
+            .then(response => response.json())
+            .then(data => {
+                const responseMessage = document.getElementById("responseMessage");
+                if (data.status === "success") {
+                    responseMessage.innerText = `✅ ${data.message}`;
+                    responseMessage.style.color = "green";
+                } else {
+                    responseMessage.innerText = `❌ ${data.message}`;
+                    responseMessage.style.color = "red";
+                }
+            })
+            .catch(error => console.error("Error:", error));
         }
     </script>
 </body>
