@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride Confirmation</title>
+    <link rel="stylesheet" href="ride_confirmation.css">
+</head>
+<body>
+
+    <div class="confirmation-container">
+        <h2>Confirm Your Ride</h2>
+        <div class="payment-section">
+            <p><strong>Payment Method:</strong> UPI 🏦</p>
+        </div>
+
+        <button class="confirm-btn" onclick="confirmRide()">Confirm Ride</button>
+        <p class="confirmation-message" id="confirmationMessage"></p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const estimatedFare = params.get('fare') || "N/A";
+
+            document.querySelector('.ride-details').innerHTML = `
+                <p><strong>Estimated Fare:</strong> ₹${estimatedFare}</p>
+            `;
+        };
+
+        function confirmRide() {
+            document.getElementById("confirmationMessage").innerText = "✅ Your ride has been confirmed!";
+        }
+    </script>
+    <script src="ride_confirmation.js"></script>
+</body>
+</html>

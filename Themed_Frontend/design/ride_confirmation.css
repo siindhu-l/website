@@ -1,0 +1,108 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(100deg, #e0f7fa, #b2ebf2, #ffffff);
+    margin: 0;
+    backdrop-filter: blur(10px);
+    transition: background 0.5s ease-in-out;
+}
+
+/* Ride Confirmation Container */
+.confirmation-container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+    border: 5px solid rgba(27, 25, 25, 0.3);
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Title */
+.confirmation-container h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Ride Details */
+.ride-details {
+    text-align: left;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.ride-details p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Payment Section */
+.payment-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#payment-method {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    outline: none;
+}
+
+#payment-icon {
+    font-size: 20px;
+}
+
+/* Confirm Button */
+.confirm-btn {
+    width: 100%;
+    padding: 12px;
+    background: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.confirm-btn:hover {
+    background: #4dd0e1;
+    transform: translateY(-2px);
+}
+
+.confirm-btn:active {
+    background: #1C6B91;
+    transform: scale(0.98);
+}
+
+/* Confirmation Message */
+.confirmation-message {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #00bcd4;
+}
+
+/* Fade In Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

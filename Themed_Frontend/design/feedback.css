@@ -1,0 +1,99 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0f7fa; /* Cyan-themed background */
+    margin: 0;
+    color: #004d60; /* Dark cyan text */
+}
+
+/* Feedback Container */
+.feedback-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 128, 128, 0.3);
+    text-align: center;
+    width: 400px;
+}
+
+/* Title */
+.feedback-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #00acc1; /* Bright cyan for headings */
+}
+
+/* Rating Section */
+.rating-section {
+    margin-bottom: 20px;
+}
+
+.stars {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.star {
+    color: #b0bec5; /* Muted grey for unfilled stars */
+    transition: color 0.3s;
+}
+
+.star.filled {
+    color: #00acc1; /* Cyan-themed star fill */
+}
+
+#rating-feedback {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #004d60;
+}
+
+/* Comments Section */
+.comments-section {
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #00acc1;
+    border-radius: 5px;
+    resize: none;
+    background-color: #e0f7fa;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+textarea:focus {
+    border-color: #007c91;
+}
+
+/* Submit Section */
+.submit-section {
+    margin-top: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #00acc1;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #007c91;
+}
+
+button:active {
+    transform: scale(0.98);
+}

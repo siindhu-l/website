@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniride Fare Estimator</title>
+    <link rel="stylesheet" href="fare_estimation.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            width: 100%;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        #fare-result {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+            color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Fare Estimation</h1>
+        
+        <form id="fare-form">
+            <div class="form-group">
+                <label for="pickup">Pickup Location:</label>
+                <input type="text" id="pickup" name="pickup" placeholder="Enter pickup location" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dropoff">Dropoff Location:</label>
+                <input type="text" id="dropoff" name="dropoff" placeholder="Enter dropoff location" required>
+            </div>
+
+            <div class="form-group">
+                <label for="distance">Approximate Distance (km):</label>
+                <input type="number" id="distance" name="distance" placeholder="Enter distance" min="1" max="3" required>
+            </div>
+
+            <button type="submit">Estimate Fare</button>
+            <button type="button" id="continue-btn" style="display:none;" onclick="navigateToConfirmation()">Continue</button>
+
+        </form>
+
+        <div id="fare-result"></div>
+    </div>
+
+    <script>
+        document.getElementById('fare-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const pickup = document.getElementById('pickup').value.trim();
+            const dropoff = document.getElementById('dropoff').value.trim();
+            const distance = parseFloat(document.getElementById('distance').value.trim());
+
+            if (pickup && dropoff && distance) {
+                const farePerKm = 13; // Updated fare rate
+
+                const estimatedFare = farePerKm * distance;
+                document.getElementById('fare-result').innerText = `Estimated Fare: ₹${estimatedFare}`;
+
+                // Show the "Continue" button after fare calculation
+                document.getElementById('continue-btn').style.display = 'block';
+            } else {
+                alert('Please fill in all fields correctly.');
+            }
+        });
+
+        function navigateToConfirmation() {
+            window.location.href = "ride_confirmation.html";
+        }
+    </script>
+</body>
+</html>

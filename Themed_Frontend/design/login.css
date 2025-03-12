@@ -1,0 +1,159 @@
+/* Root Variables for Consistency */
+:root {
+    --primary-color: #00bcd4; /* Cyan */
+    --secondary-color: #333; /* Dark gray */
+    --accent-color: #E74C3C; /* Red accent */
+    --bg-color: #e0f7fa; /* Light cyan background */
+    --white: #fff;
+    --border-radius: 12px; /* Sleek rounded corners */
+    --font-family: 'Poppins', sans-serif; /* Modern font */
+}
+
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: var(--secondary-color);
+    overflow: hidden;
+}
+
+/* Container for Login Box */
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling the Login Box */
+.login-box {
+    background: rgba(255, 255, 255, 0.2); /* Glassmorphism effect */
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading Styling */
+.login-box h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Input Field Styling */
+.textbox {
+    margin-bottom: 20px;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #BDC3C7;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    color: var(--secondary-color);
+    background-color: var(--white);
+    transition: 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+.textbox input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+    outline: none;
+}
+
+/* Remember Me Section Styling */
+.remember-me {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+
+.remember-me input {
+    margin-right: 8px;
+}
+
+/* Button Styling */
+.btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 16px;
+    border: none;
+    border-radius: var(--border-radius);
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #4dd0e1;
+    transform: translateY(-2px); /* Button hover animation */
+}
+
+.btn:active {
+    background-color: #1C6B91;
+    transform: translateY(2px); /* Button active state */
+}
+
+/* Footer Styling */
+.footer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--secondary-color);
+}
+
+.footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 480px) {
+    .login-box {
+        padding: 30px;
+        max-width: 90%;
+    }
+
+    .btn {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .login-box h1 {
+        font-size: 26px;
+    }
+}

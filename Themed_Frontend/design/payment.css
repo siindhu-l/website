@@ -1,0 +1,82 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(100deg, #e0f7fa, #b2ebf2, #ffffff);
+    backdrop-filter: blur(10px);
+    transition: background 0.5s ease-in-out;
+}
+
+header {
+    background-color: black;
+    color: var(--primary-color);
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.payment-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 5px solid rgba(27, 25, 25, 0.3);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.payment-options {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.payment-method input {
+    margin-right: 10px;
+}
+
+#paymentForm input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    margin: 10px 0;
+    transition: 0.3s;
+}
+
+#paymentForm input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+    outline: none;
+}
+
+#paymentForm button {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 12px;
+    margin-top: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#paymentForm button:hover {
+    background-color: #4dd0e1;
+    transform: translateY(-2px);
+}
+
+#paymentForm button:active {
+    background-color: #1C6B91;
+    transform: translateY(2px);
+}

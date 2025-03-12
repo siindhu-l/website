@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride Completion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #e0f7fa; /* Soft cyan background */
+            color: #000; /* Black text for readability */
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 30px;
+            background-color: #ffffff; /* White container background */
+            border: 2px solid #00bcd4; /* Cyan border */
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Darker shadow for sleek effect */
+        }
+        h2 {
+            color: #00bcd4; /* Cyan for heading */
+        }
+        p {
+            color: #000; /* Black text for paragraph */
+        }
+        button {
+            padding: 12px 25px;
+            background-color: #00bcd4; /* Cyan button */
+            color: #000; /* Black text for contrast */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background-color: #4dd0e1; /* Lighter cyan hover effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Ride Completed!</h2>
+        <p>Thank you for riding with us.</p>
+        <button onclick="submitFeedback()">Submit Feedback</button>
+    </div>
+    <script src="ride_completion.js"></script>
+</body>
+</html>

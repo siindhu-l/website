@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+        <link rel="stylesheet" href="ride_req.css">
+    
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incoming Ride Request</title>
+    
+</head>
+<body>
+
+    <script src="ride_req.js"></script>
+    <div class="ride-request-container">
+        <h2>Incoming Ride Request</h2>
+        <div class="request-details">
+            <p><strong>Pickup:</strong> </p>
+            <p><strong>Destination:</strong> </p>
+            <p><strong>Estimated Fare:</strong> </p>
+        </div>
+        <div class="buttons">
+            <button class="accept-btn" onclick="handleRequest('accepted')">Accept</button>
+            <button class="decline-btn" onclick="handleRequest('declined')">Decline</button>
+        </div>
+        <div class="message" id="responseMessage"></div>
+    </div>
+
+    <script>
+        function handleRequest(action) {
+            let message = action === 'accepted' ? 'Ride Accepted! 🚗' : 'Ride Declined! ❌';
+            document.getElementById('responseMessage').innerText = message;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="driverlogin.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e0f7fa; /* Soft cyan background */
+            margin: 0;
+        }
+        .login-container {
+            background: #ffffff; /* White background for box */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+            text-align: center;
+            width: 320px;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #000; /* Black text for heading */
+        }
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #000; /* Black text for labels */
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #00bcd4; /* Cyan border */
+            border-radius: 5px;
+            background-color: #e0f7fa; /* Light cyan for input fields */
+            color: #000; /* Black text for readability */
+            outline: none;
+        }
+        .input-group input:focus {
+            border-color: #4dd0e1; /* Brighter cyan on focus */
+        }
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background: #00bcd4;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+        .login-btn:hover {
+            background: #4dd0e1; /* Brighter cyan on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Driver Login</h2>
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <script src="drv_login.js"></script>
+    </div>
+</body>
+</html>
