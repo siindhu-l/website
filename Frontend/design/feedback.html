@@ -25,7 +25,7 @@
 
         <div class="comments-section">
             <h3>Your Comments</h3>
-            <textarea id="comments" placeholder="Write your comments here..." rows="4"></textarea>
+            <textarea id="comments" name="comments" placeholder="Write your comments here..." rows="4"></textarea>
         </div>
 
         <div class="submit-section">
@@ -33,32 +33,6 @@
         </div>
     </div>
 
-    <script>
-        function rateRide(rating) {
-            let feedback = "Thank you for your feedback!";
-            document.getElementById("rating-feedback").innerText = `You rated this ride: ${rating} stars. ${feedback}`;
-            const stars = document.querySelectorAll(".star");
-            stars.forEach((star, index) => {
-                if (index < rating) {
-                    star.classList.add("filled");
-                } else {
-                    star.classList.remove("filled");
-                }
-            });
-        }
-
-        function submitFeedback() {
-            const rating = document.querySelectorAll(".star.filled").length;
-            const comments = document.getElementById("comments").value;
-            
-            if (rating === 0 || comments.trim() === "") {
-                alert("Please provide both a rating and comments.");
-            } else {
-                alert("Thank you for your feedback!");
-                // Here, you could send the feedback data to the backend
-            }
-        }
-    </script>
     <script src="feedback.js"></script>
 </body>
 </html>
