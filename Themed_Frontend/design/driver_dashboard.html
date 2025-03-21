@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Dashboard</title>
+    <link rel="stylesheet" href="driver_dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Driver Panel</h2>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Ride Requests</a></li>
+                <li><a href="#">Earnings</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1>Welcome, Driver</h1>
+            <p>Manage your rides and earnings here.</p>
+
+            <!-- Earnings Section -->
+            <div class="dashboard-stats">
+                <div class="stat-box">
+                    <h3>Total Earnings</h3>
+                    <p id="total-earnings">Loading...</p>
+                </div>
+            </div>
+
+            <!-- Incoming Ride Requests Section -->
+            <h2>Incoming Ride Requests</h2>
+            <div class="ride-requests" id="ride-requests">
+                <p>Loading ride requests...</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="driver_dashboard.js"></script>
+</body>
+</html>
