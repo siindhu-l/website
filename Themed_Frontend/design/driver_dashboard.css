@@ -14,7 +14,7 @@ body {
 
 /* Sidebar Styles */
 .sidebar {
-    width: 250px;
+    width: 260px;
     background-color: #2C3E50;
     color: white;
     padding: 20px;
@@ -24,6 +24,7 @@ body {
     position: fixed;
     left: 0;
     top: 0;
+    transition: all 0.3s ease-in-out;
 }
 
 .sidebar h2 {
@@ -36,7 +37,6 @@ body {
 
 .sidebar ul {
     list-style: none;
-    padding: 0;
 }
 
 .sidebar ul li {
@@ -48,26 +48,27 @@ body {
     color: white;
     font-size: 16px;
     display: block;
-    padding: 10px;
+    padding: 12px;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: background 0.3s ease-in-out;
 }
 
 .sidebar ul li a:hover {
     background: #1A252F;
 }
 
-/* Main Content Styles */
+/* Main Content */
 .main-content {
-    margin-left: 260px;
+    margin-left: 270px;
     flex-grow: 1;
     padding: 40px;
     text-align: center;
 }
 
 .main-content h1 {
-    font-size: 28px;
+    font-size: 30px;
     color: #2C3E50;
+    font-weight: bold;
 }
 
 .main-content p {
@@ -81,16 +82,18 @@ body {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
 .stat-box {
     background: white;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     width: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
 }
 
 .stat-box:hover {
@@ -103,7 +106,7 @@ body {
 }
 
 .stat-box p {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
     color: #3498db;
 }
@@ -113,25 +116,32 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 10px;
+    padding: 15px;
     text-align: left;
 }
 
 .ride-request {
     background: white;
     padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.ride-request:hover {
+    transform: translateY(-3px);
 }
 
 .ride-request button {
-    padding: 8px 12px;
+    padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease-in-out;
 }
 
 .accept {
@@ -139,7 +149,61 @@ body {
     color: white;
 }
 
+.accept:hover {
+    background: #27ae60;
+}
+
 .reject {
     background: #e74c3c;
     color: white;
+}
+
+.reject:hover {
+    background: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 210px;
+        padding: 20px;
+    }
+
+    .dashboard-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ride-request {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ride-request button {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .sidebar {
+        width: 180px;
+        padding: 15px;
+    }
+
+    .main-content {
+        margin-left: 190px;
+        padding: 15px;
+    }
+
+    .dashboard-stats {
+        gap: 10px;
+    }
+
+    .stat-box {
+        width: 100%;
+    }
 }
