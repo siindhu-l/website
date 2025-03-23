@@ -1,16 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetchDashboardStats();
+    // Get sidebar buttons
+    document.getElementById("dashboard-btn").addEventListener("click", function () {
+        window.location.href = "dashboard.php"; // Redirect to dashboard data
+    });
+
+    document.getElementById("users-btn").addEventListener("click", function () {
+        window.location.href = "users.php"; // Redirect to users database
+    });
+
+    document.getElementById("bookings-btn").addEventListener("click", function () {
+        window.location.href = "bookings.php"; // Redirect to bookings data
+    });
+
+    document.getElementById("payments-btn").addEventListener("click", function () {
+        window.location.href = "payments.php"; // Redirect to payments data
+    });
 });
 
-function fetchDashboardStats() {
-    fetch("fetch_admin_data.php")  // API endpoint to fetch data from backend
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById("total-users").textContent = data.total_users;
-            document.getElementById("total-bookings").textContent = data.total_bookings;
-            document.getElementById("total-earnings").textContent = `₹${data.total_earnings}`;
-        })
-        .catch(error => {
-            console.error("Error fetching dashboard data:", error);
-        });
+// Logout function
+function logout() {
+    window.location.href = "logout.php"; // Redirect to logout script
 }
