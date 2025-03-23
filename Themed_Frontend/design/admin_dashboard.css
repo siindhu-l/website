@@ -60,29 +60,36 @@ body {
 
 /* Main Content Styles */
 .main-content {
-    margin-left: 260px;
-    flex-grow: 1;
-    padding: 40px;
+    margin-left: 250px; /* Push content to the right to avoid sidebar overlap */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
     text-align: center;
+    width: calc(100% - 250px); /* Adjust width to fill available space */
+    height: 100vh; /* Full viewport height */
+    padding: 20px;
 }
 
+/* Centered Welcome Text */
 .main-content h1 {
-    font-size: 28px;
+    font-size: 32px;
     color: #2C3E50;
+    margin-bottom: 10px;
 }
 
 .main-content p {
-    font-size: 16px;
+    font-size: 18px;
     color: #555;
-    margin-bottom: 20px;
 }
 
 /* Dashboard Stats */
 .dashboard-stats {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .stat-box {
@@ -91,6 +98,7 @@ body {
     border-radius: 8px;
     width: calc(33.33% - 20px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
     transition: transform 0.3s;
 }
 
@@ -125,6 +133,7 @@ body {
     .sidebar {
         width: 60px;
         overflow: hidden;
+        padding: 10px;
     }
 
     .sidebar h2 {
@@ -139,6 +148,7 @@ body {
 
     .main-content {
         margin-left: 70px;
+        width: calc(100% - 70px);
     }
 }
 
@@ -146,9 +156,18 @@ body {
     .main-content {
         padding: 20px;
         margin-left: 60px;
+        width: calc(100% - 60px);
     }
 
     .stat-box {
         width: 100%;
+    }
+
+    .main-content h1 {
+        font-size: 24px;
+    }
+
+    .main-content p {
+        font-size: 16px;
     }
 }
